@@ -28,6 +28,12 @@ namespace Regex_Programs
                         regexSample.Validating(inputLast);
                         break;
                     case 3:
+                        Console.WriteLine("Enter the Email to Check Validation:");
+                        string inputMail = Console.ReadLine();
+                        regexSample.ValidatingEmail(inputMail);
+                        regexSample.Validating(inputMail);
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
