@@ -7,19 +7,28 @@ namespace Regex_Programs
         static void Main(string[] args)
         {
             bool flag = true;
+            RegexSample regexSample = new RegexSample();
             while (flag)
             {
-                Console.WriteLine("Enter your Choice Number to Execute the Regex Program Press- 1-Validate Name, 2-Exit");
+                Console.WriteLine("User Registration Validating Using Regular Expression!");
+                Console.WriteLine("Enter your Choice Number to Execute the Regex Program Press- 1-Validate First Name, 2-Validate Last Name, 3-Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
-                    case 1:
-                        Console.WriteLine("User Registration Validating using Regular Expression!");
-                        RegexSample regexSample = new RegexSample();
+                    case 1:                        
                         Console.WriteLine("Enter the First Name to Check Validation:");
                         string input = Console.ReadLine();
                         regexSample.ValidatingFirstName(input);
-                        regexSample.Validating();
+                        regexSample.Validating(input);
+                        break;
+                    case 2:
+                        Console.WriteLine("Enter the Last Name to Check Validation:");
+                        string inputLast = Console.ReadLine();
+                        regexSample.ValidatingLastName(inputLast);
+                        regexSample.Validating(inputLast);
+                        break;
+                    case 3:
+                        flag = false;
                         break;
                 }
             }
