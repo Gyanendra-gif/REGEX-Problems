@@ -12,9 +12,10 @@ namespace Regex_Programs
         string patternMob = @"/^(\+\d{1,3}[- ]?)?\d{10}$/";
         string patternPass = @"[a-z,A-Z,0-9]{8,}$";
         string patternPassword = @"^(?=.*[A-Z]).{8,}$"; // For atleast One Upper Case
+        string patternPas = @"(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?!.*[<>`])(?=[^.,:;'!@#$%^&*_+=|(){}[?\-\]\/\\]*[.,:;'!@#$%^&*_+=|(){}[?\-\]\/\\][^.,:;'!@#$%^&*_+=|(){}[?\-\]\/\\]*$).{8}$"; // For One Special Character
         public void Validating(string input)
         {
-            Regex regex = new Regex(patternPassword);
+            Regex regex = new Regex(patternPas);
             Console.WriteLine("Validating the Password");
             ValidatingPass(input);
         }
@@ -71,9 +72,9 @@ namespace Regex_Programs
                 Console.WriteLine("Invalid Mobile Number");
             }
         }
-        public void ValidatingPass(string inputPass) // Password with Eight Characters and one Upper Case
+        public void ValidatingPass(string inputPass) // Password with one special characters
         {
-            Regex regex = new Regex(patternPassword);
+            Regex regex = new Regex(patternPas);
             bool res = regex.IsMatch(inputPass);
             if (res)
             {
