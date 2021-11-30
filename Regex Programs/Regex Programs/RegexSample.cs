@@ -11,11 +11,12 @@ namespace Regex_Programs
         string patternEmail = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
         string patternMob = @"/^(\+\d{1,3}[- ]?)?\d{10}$/";
         string patternPass = @"[a-z,A-Z,0-9]{8,}$";
+        string patternPassword = @"^(?=.*[A-Z]).{8,}$"; // For atleast One Upper Case
         public void Validating(string input)
         {
-            Regex regex = new Regex(patternPass);
+            Regex regex = new Regex(patternPassword);
             Console.WriteLine("Validating the Password");
-            ValidatingMob(input);
+            ValidatingPass(input);
         }
         public void ValidatingFirstName(string input)
         {
@@ -70,9 +71,9 @@ namespace Regex_Programs
                 Console.WriteLine("Invalid Mobile Number");
             }
         }
-        public void ValidatingPass(string inputPass)
+        public void ValidatingPass(string inputPass) // Password with Eight Characters and one Upper Case
         {
-            Regex regex = new Regex(patternPass);
+            Regex regex = new Regex(patternPassword);
             bool res = regex.IsMatch(inputPass);
             if (res)
             {
