@@ -70,5 +70,18 @@ namespace Regex_Programs
                 Console.WriteLine("Invalid Mobile Number");
             }
         }
+        public void ValidatingPass(string inputPass)
+        {
+            Regex regex = new Regex(patternPass);
+            bool res = regex.IsMatch(inputPass);
+            if (res)
+            {
+                Console.WriteLine("Password is Valid");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Password");
+            }
+        }
     }
 }

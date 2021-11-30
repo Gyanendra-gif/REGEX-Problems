@@ -40,6 +40,12 @@ namespace Regex_Programs
                         regexSample.Validating(inputMob);
                         break;                      
                     case 5:
+                        Console.WriteLine("Enter the Password to Check Validation");
+                        string inputPass = Console.ReadLine();
+                        regexSample.ValidatingPass(inputPass);
+                        regexSample.Validating(inputPass);
+                        break;
+                    case 6:
                         flag = false;
                         break;
                 }
