@@ -11,7 +11,7 @@ namespace Regex_Programs
             while (flag)
             {
                 Console.WriteLine("User Registration Validating Using Regular Expression!");
-                Console.WriteLine("Enter your Choice Number to Execute the Regex Program Press- 1-Validate First Name, 2-Validate Last Name, 3-Exit");
+                Console.WriteLine("Enter your Choice Number to Execute the Regex Program Press- 1-Validate First Name, 2-Validate Last Name, 3-Validate Mobile Number,4-Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -34,6 +34,12 @@ namespace Regex_Programs
                         regexSample.Validating(inputMail);
                         break;
                     case 4:
+                        Console.WriteLine("Enter the Mobile Number to Check Validation:");
+                        string inputMob = Console.ReadLine();
+                        regexSample.ValidatingMob(inputMob);
+                        regexSample.Validating(inputMob);
+                        break;                      
+                    case 5:
                         flag = false;
                         break;
                 }

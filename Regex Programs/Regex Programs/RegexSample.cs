@@ -9,11 +9,13 @@ namespace Regex_Programs
     {
         string pattern = "^[A-Za-z]{2,}$";
         string patternEmail = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+        string patternMob = @"/^(\+\d{1,3}[- ]?)?\d{10}$/";
+        string patternPass = @"[a-z,A-Z,0-9]{8,}$";
         public void Validating(string input)
         {
-            Regex regex = new Regex(patternEmail);
-            Console.WriteLine("Validating the Email Addr.");
-            ValidatingEmail(input);
+            Regex regex = new Regex(patternPass);
+            Console.WriteLine("Validating the Password");
+            ValidatingMob(input);
         }
         public void ValidatingFirstName(string input)
         {
@@ -53,6 +55,19 @@ namespace Regex_Programs
             else
             {
                 Console.WriteLine("Invalid Email");
+            }
+        }
+        public void ValidatingMob(string inputMob)
+        {
+            Regex regex = new Regex(patternMob);
+            bool res = regex.IsMatch(inputMob);
+            if (res)
+            {
+                Console.WriteLine("Valid Mobile Number");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Mobile Number");
             }
         }
     }
